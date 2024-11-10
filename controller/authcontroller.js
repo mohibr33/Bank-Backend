@@ -11,7 +11,7 @@ const signup = (req, res) => {
     const query = `INSERT INTO staff (email, password, firstname, lastname) VALUES (?,?,?,?)`;
     connection.query(query, [email, password, firstname, lastname], (err, result) => {
         if (err) {
-            console.error("Database error:", err);  // Log error for debugging
+            console.error("Database error:", err);  
             return res.status(500).json("Server Error 500");
         }
 
